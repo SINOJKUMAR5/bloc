@@ -12,7 +12,19 @@ class login_page extends StatelessWidget {
     return Scaffold(
         body: Center(
             child: BlocListener(
-      listener: (context, state) {},
+      listener: (context, state) {
+
+
+        if(state is login_succes )
+        {
+          Center(Text(state.success_msg));
+        },
+
+      else if(state is login_failed){
+        Center(Text(state.failed_msg));
+
+        
+      }
     )));
   }
 }
